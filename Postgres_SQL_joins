@@ -1,0 +1,15 @@
+SELECT students.firstname,lecturers.lastname,lecturers.city
+From students
+inner join lecturers on students.city=lecturers.city;
+
+SELECT students.firstname,lecturers.lastname,lecturers.city
+From students
+left join lecturers on students.city=lecturers.city;
+
+SELECT students.firstname,lecturers.lastname,lecturers.city
+From students
+right join lecturers on students.city=lecturers.city;
+
+SELECT students.firstname,lecturers.lastname,lecturers.city
+From students
+full join lecturers on students.city=lecturers.city;

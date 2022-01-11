@@ -1,0 +1,23 @@
+CREATE SCHEMA school;
+CREATE TABLE students(
+	student_id varchar(20) NOT NULL,
+	firstname text,
+	lastname text,
+	age int,
+	height_in_ft int
+);
+
+CREATE TABLE lecturers(
+	firstname text,
+	lastname text,
+	address varchar(255),
+	city varchar(255),
+	postalCode int,
+	country varchar(255),
+	salary int,
+	subject_taught varchar(255)
+);
+
+Alter table students add city varchar(255);
+Alter table lecturers drop address;
+DROP TABLE students,lecturers;

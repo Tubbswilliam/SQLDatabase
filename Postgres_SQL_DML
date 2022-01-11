@@ -1,0 +1,33 @@
+SET search_path TO school;
+ALTER TABLE lecturers drop postalcode;
+ALTER TABLE lecturers RENAME salary To salary_in_dollars
+INSERT INTO lecturers values('William','Wambua','Nairobi','Kenya','1500','Data Science');
+INSERT INTO lecturers values('Mary','Wambui','Embu','Kenya','900','Statistics');
+INSERT INTO lecturers values('Mirriam','Washuka','Machakos','Kenya','1100','Linear algebra');
+INSERT INTO lecturers values('Dennis','Wakesho','Nairobi','Kenya','1500','Caculus');
+INSERT INTO lecturers values('Esther','Wambui','Kisumu','Kenya','700','Communication skills');
+INSERT INTO lecturers values('Rebecca','Martin','London','UK','14500','Software Engineering');
+INSERT INTO lecturers values('Agnes','Akinyi','Mombasa','Kenya','1300','Machine Learning');
+INSERT INTO lecturers values('Suraj','Patel','Bagladesh','India','1000','Design and Experiments');
+
+ALTER TABLE students drop height_in_ft;
+ALTER TABLE students drop city;
+ALTER TABLE students drop subject_taught;
+
+ALTER TABLE students Add height_in_ft float;
+ALTER TABLE students Add city text;
+ALTER TABLE students add subject_taught text;
+
+INSERT INTO students values('Bssc/145j/2017','William','Mutinda','22','6.0','Nairobi','Data Science');
+INSERT INTO students values('Bmcs/125j/2017','Ben','McBen','23','5.3','Nyeri','Statistics');
+INSERT INTO students values('Bmcs/165j/2017','Derrick','Wambui','22','5.9','Machakos','Software Engineering');
+INSERT INTO students values('Bssc/137j/2017','Denis','Murimi','21','5.10','Bagladesh','Machine Learning');
+INSERT INTO students values('Bmcs/135j/2017','Wambui','Nduta','23','5.11','Kisumu','Communication skills');
+INSERT INTO students values('Bssc/115j/2017','Martin','Moses','21','5.7','London','Design and Experiments');
+INSERT INTO students values('Bssc/115j/2017','Denno','Mukimo','24','5.11','Kirinyaga','Data strucuters and Algorithms');
+
+UPDATE students set lastname='Waka' where firstname='Derrick';
+Select lastname FROM students where firstname='Derrick';
+
+DELETE FROM students where lastname like '%Wambui%';
+SELECT * FROM students;

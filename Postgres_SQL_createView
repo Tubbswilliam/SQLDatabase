@@ -1,0 +1,6 @@
+create view fulljoin AS
+	SELECT students.firstname,lecturers.lastname,lecturers.city
+	From students
+	full join lecturers on students.city=lecturers.city;
+	
+SELECT * from fulljoin;

@@ -1,0 +1,18 @@
+SELECT DISTINCT salary_in_dollars FROM lecturers;
+SELECT firstname,lastname,subject_taught FROM lecturers WHERE subject_taught NOT IN('Data Science','Machine Learning')
+SELECT avg(salary_in_dollars) FROM lecturers WHERE subject_taught='Machine Learning';
+
+SELECT salary_in_dollars,count(*) FROM lecturers group by salary_in_dollars;
+SELECT firstname,lastname FROM lecturers WHERE firstname like'%r';
+SELECT * FROM lecturers WHERE firstname='Esther';
+
+SELECT * FROM lecturers WHERE salary_in_dollars>(
+	SELECT salary_in_dollars FROM lecturers WHERE firstname='Esther'
+);
+
+CREATE VIEW newTableView AS(
+	SELECT * FROM lecturers WHERE salary_in_dollars>(
+	SELECT salary_in_dollars FROM lecturers WHERE firstname='Esther'
+));
+
+SELECT * FROM newTableView;

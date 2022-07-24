@@ -1,0 +1,46 @@
+--Creating the database
+CREATE DATABASE School
+SET SEARCH_PATH TO School
+
+--Creating the first table of the school database
+CREATE TABLE student(
+	student_id VARCHAR(15) NOT NULL PRIMARY KEY,
+	name VARCHAR(20),
+	major VARCHAR(20)  
+);
+
+--Checking the student table was created properly
+SELECT * FROM student
+
+---Adding a variable/column
+ALTER TABLE student ADD gpa DECIMAL(3,2) DEFAULT 0.00
+
+---Inserting data into table
+INSERT INTO student VALUES('bssc/145j/2017','William Wambua','stats and compSci',4.7),
+						   ('bmcs/165j/2017','James Njuguna','maths and compSci',4.8),
+						   ('bsft/125j/2017','Monica Wanjiko','food science',4.9),
+						   ('bsmf/167j/2017','Faith Wangari','math and Finance',4.94),
+						   ('bsmc/147j/2017','Rachel Omo','maths and compSci',0)
+
+--Updating a record
+UPDATE student
+SET gpa=4.37
+WHERE student_id='bsmc/147j/2017'
+
+UPDATE student
+SET major='maths and compSci'
+WHERE name='Faith Wangari'
+
+SELECT * FROM student
+
+--Queries
+--Query One
+SELECT student_id,major,gpa FROM student
+WHERE major='maths and compSci'
+ORDER BY gpa DESC
+
+--Query Two
+SELECT major,MAX(gpa) AS highest_gpa_per_major FROM student
+GROUP BY major
+
+

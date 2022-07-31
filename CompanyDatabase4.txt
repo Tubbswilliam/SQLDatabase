@@ -1,0 +1,11 @@
+--joining tables(inner join)
+SELECT e.emp_id,e.first_name,b.branch_name
+FROM employee e
+JOIN branch b
+ON e.emp_id = mgr_id
+
+--joining tables(inner join)
+SELECT e.emp_id,e.first_name,b.branch_name
+FROM employee e
+LEFT JOIN branch b
+ON e.emp_id = mgr_id
